@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Foundations + Project Outline</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #222;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    p {
+      color: #555;
+      margin-left: 10px;
+      font-size: 0.95rem;
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 0.95rem;
+      font-family: Arial, sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    .save-status {
+      font-size: 0.85rem;
+      color: green;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Foundations + Project Outline</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Process</h2>
+      <p>Outline the overall process of your research and project development.</p>
+      <textarea data-key="process" placeholder="Write your process here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Title</h2>
+      <p>A concise title that captures the essence of your project or research theme.</p>
+      <textarea data-key="title" placeholder="Write your project title here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Research Question(s)</h2>
+      <p>What questions does your project raise? What are you curious about? Does your work connect to societal debates or policy proposals? Does it address socio-technical problems?</p>
+      <textarea data-key="research_questions" placeholder="List your research questions here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Keywords</h2>
+      <p>Provide 6 key terms that summarize the scope and focus of your research.</p>
+      <textarea data-key="keywords" placeholder="Enter your keywords here..."></textarea>
+    </section>
+
+    <section>
+      <h2>3 Intersecting Fields</h2>
+      <p>Identify three intersecting fields or disciplines where your project is situated.</p>
+      <textarea data-key="intersecting_fields" placeholder="Describe the intersecting fields here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Historical Lineage</h2>
+      <p>What historical lineage does your work emerge from? What trajectory are you continuing? This may include tools, theories, designs, aesthetics, experiments, political debates, or societal events.</p>
+      <textarea data-key="historical_lineage" placeholder="Write about historical lineage here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Your Community of Practice</h2>
+      <p>Who else is working in this space? What approaches have they taken? How do you position yourself in relation to them? Are you advancing, critiquing, or reinterpreting their work?</p>
+      <textarea data-key="community_of_practice" placeholder="Describe your community of practice here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Situated Technology</h2>
+      <p>What is your orientation to the CDP theme based on the readings, discussions, and references shared, or others you may incorporate?</p>
+      <textarea data-key="situated_technology" placeholder="Write about situated technology here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Methods</h2>
+      <p>Which software techniques, data practices, theoretical approaches, design tactics, or material processes are emerging as pertinent to your practice? Will you use qualitative or quantitative methods? What components are key (physical, computational, aesthetic)?</p>
+      <textarea data-key="methods" placeholder="Describe your methods here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Computational Design Experiments</h2>
+      <p>Include any images, visualizations, simulations, interactive demos, sketches, models, or studies you have authored that relate to your project.</p>
+      <textarea data-key="computational_experiments" placeholder="Describe your computational design experiments here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Visual Representation</h2>
+      <p>What aesthetic modes are inspiring to you? What is your visual language and representational style? Does your visual representation situate you in a specific community?</p>
+      <textarea data-key="visual_representation" placeholder="Describe your visual representation here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Rhetorical Argument</h2>
+      <p>If design is an argument, what is your argument? What do you want to say with this project?</p>
+      <textarea data-key="rhetorical_argument" placeholder="Write your rhetorical argument here..."></textarea>
+    </section>
+
+    <section>
+      <h2>Potential Capstone Project Outline</h2>
+      <p>Provide a brief outline of a potential capstone project based on the research foundations above. This is not fixed or final but should indicate the possible direction for your final project.</p>
+      <textarea data-key="capstone_outline" placeholder="Describe your potential capstone project here..."></textarea>
+    </section>
+
+    <section>
+      <h2>The Challenge</h2>
+      <p>What challenges do you foresee in the development of this project? Are they related to technical skills, collaboration, design abilities, datasets, or something else? Be honest about your current skill set and your plan moving forward.</p>
+      <textarea data-key="challenges" placeholder="List your challenges here..."></textarea>
+    </section>
+  </main>
+
+  <script>
+    // Load saved data from localStorage
+    document.querySelectorAll('textarea').forEach(textarea => {
+      const key = textarea.getAttribute('data-key');
+      const savedValue = localStorage.getItem(key);
+      if (savedValue) textarea.value = savedValue;
+
+      // Save data on input
+      textarea.addEventListener('input', () => {
+        localStorage.setItem(key, textarea.value);
+      });
+    });
+  </script>
+</body>
+</html>
