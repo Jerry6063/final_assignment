@@ -1,39 +1,95 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+
+/* ============================================================================
+   BASIC PAGE STYLING
+   ============================================================================ */
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.8;
   color: #333;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }
 
+/* ============================================================================
+   HEADER STYLING
+   ============================================================================ */
+
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
   background-color: #fff;
-  color: #222;
-  text-align: center;
-  padding: 40px 20px;
-  border-bottom: 1px solid #ddd;
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 2.8rem;
-  margin: 0;
-  letter-spacing: 0.5px;
+header .left {
+  color: #aaa;
+  font-weight: 400;
 }
+
+header .center {
+  font-weight: 400;
+  text-align: center;
+  color: #111;
+}
+
+header .center span {
+  font-size: 12px;
+  color: #888;
+}
+
+header .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* 控制名字与按钮的距离 */
+}
+
+.student-name {
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #000;
+}
+
+.figjam-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #007aff;
+  text-decoration: none;
+  border: 1px solid #007aff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.figjam-link:hover {
+  background-color: #007aff;
+  color: #fff;
+}
+
+
+/* ============================================================================
+   MAIN CONTENT AREA
+   ============================================================================ */
 
 main {
   max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+  margin: 60px auto;
+  padding: 0 20px;
   background-color: #fff;
 }
 
-section {
-  margin-bottom: 50px;
-}
+/* ============================================================================
+   SECTION TITLES
+   ============================================================================ */
 
 h2 {
   font-family: 'Playfair Display', serif;
@@ -48,6 +104,10 @@ p {
   color: #555;
   margin: 0 0 10px 0;
 }
+
+/* ============================================================================
+   EDITOR AREA (Firebase contenteditable blocks)
+   ============================================================================ */
 
 .editor {
   width: 100%;
@@ -68,6 +128,55 @@ p {
 
 .editor img {
   max-width: 100%;
+  max-height: 300px;
   margin: 10px 0;
   display: block;
+  object-fit: contain;
+}
+
+/* ============================================================================
+   GRAPH VISUALIZATION (if used)
+   ============================================================================ */
+
+#d3-container-2 {
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
+  margin-left: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+/* Tooltip for D3 */
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  main {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  #d3-container-2 {
+    height: 300px;
+  }
 }
